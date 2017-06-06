@@ -6,6 +6,7 @@ function divSystemContentElement(message) {
   return $('<div></div>').html('<i>' + message + '</i>');
 }
 
+/* 사용자 입력 처리 */
 function processUserInput(chatApp, socket) {
   var message = $('#send-message').val();
   var systemMessage;
@@ -24,6 +25,7 @@ function processUserInput(chatApp, socket) {
   $('#send-message').val('');
 }
 
+/* Client-side, 애플리케이션 초기화 */
 var socket = io.connect();
 
 $(document).ready(function() {
