@@ -11,7 +11,7 @@ function send404(response) {
 }
 
 function sendFile(response, filePath, fileContent) {
-    response.writeHead(200, {'Content-Type': mime.lookup(path.basename(filePath))};
+    response.writeHead(200, {'Content-Type': mime.lookup(path.basename(filePath))});
     response.end(fileContent);
 }
 
@@ -47,4 +47,8 @@ var server = http.createServer(function(request, response) {
 
     var absPath = './' + filePath;
     serveStatic(response, cache, absPath);
+});
+
+server.listen(3000, function() {
+    console.log("Server listening on port 3000");
 });
